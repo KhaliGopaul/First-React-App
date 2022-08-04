@@ -1,8 +1,11 @@
+import {useState } from 'react'
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  let count = 0;
+  // let count = 0;
+  const [count,setCount] = useState(0)
   return (
     <div className="App">
       <header className="App-header">
@@ -11,10 +14,11 @@ function App() {
         <p>
         <code>You clicked the button {count} times.</code>
         </p>
-        <button> onClick={() => {
-          console.log("I clicked the button");
-          count = count + 1;
-        }}Click Me</button>
+        <button onClick={() => {
+          console.log('I clicked the button ' + count);
+          // count = count + 1;
+          setCount(count + 1)
+        }}>add one</button>
         
       </header>
     </div>
